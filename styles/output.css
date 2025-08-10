@@ -257,6 +257,9 @@
   .relative {
     position: relative;
   }
+  .static {
+    position: static;
+  }
   .sticky {
     position: sticky;
   }
@@ -789,6 +792,13 @@
   .border-2 {
     border-style: var(--tw-border-style);
     border-width: 2px;
+  }
+  .border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
+  .border-gray-100 {
+    border-color: var(--color-gray-100);
   }
   .border-gray-200 {
     border-color: var(--color-gray-200);
@@ -1412,6 +1422,11 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
+  .md\:static {
+    @media (width >= 48rem) {
+      position: static;
+    }
+  }
   .md\:block {
     @media (width >= 48rem) {
       display: block;
@@ -1440,6 +1455,11 @@
   .md\:h-\[420px\] {
     @media (width >= 48rem) {
       height: 420px;
+    }
+  }
+  .md\:h-auto {
+    @media (width >= 48rem) {
+      height: auto;
     }
   }
   .md\:w-1\/2 {
@@ -1475,6 +1495,11 @@
   .md\:w-\[320px\] {
     @media (width >= 48rem) {
       width: 320px;
+    }
+  }
+  .md\:w-auto {
+    @media (width >= 48rem) {
+      width: auto;
     }
   }
   .md\:max-w-96 {
@@ -1540,6 +1565,11 @@
   .md\:justify-self-end {
     @media (width >= 48rem) {
       justify-self: flex-end;
+    }
+  }
+  .md\:bg-transparent {
+    @media (width >= 48rem) {
+      background-color: transparent;
     }
   }
   .md\:bg-\[url\(\.\.\/img\/site-hero\.png\)\] {
@@ -1667,6 +1697,12 @@
   .md\:text-\[15px\] {
     @media (width >= 48rem) {
       font-size: 15px;
+    }
+  }
+  .md\:shadow-none {
+    @media (width >= 48rem) {
+      --tw-shadow: 0 0 #0000;
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
   .lg\:block {

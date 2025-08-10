@@ -15,21 +15,28 @@
             <p class="font-semibold text-white text-sm md:text-base text-center md:text-right">Need Help? Call: +2348038612666</p>
         </div>
     </header>
-    <nav class="bg-white shadow-md py-4 px-4 md:px- lg:px-16 xh:px-32">
-        <div class="max-w-7xl mx-auto flex md:flex-row justify-between items-center">
-            <a href="/" rel="home"><img src="../img/site-logo.png" alt="HealthBoom Website" class="h-16 w-auto"></a>
-            
-            <button id="mobile-menu-button" class="md:hidden text-primary text-3xl">
-                <i class="fas fa-bars"></i>
+    <nav class="bg-white shadow-md py-4 px-4 md:px-8 lg:px-16 xl:px-32 relative z-40">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="/" rel="home" class="shrink-0">
+            <img src="/img/site-logo.png" alt="HealthBoom Website" class="h-16 w-auto">
+            </a>
+
+            <button id="mobile-menu-button" class="md:hidden text-primary text-3xl" aria-expanded="false" aria-controls="nav-links">
+            <i class="fas fa-bars"></i>
             </button>
-            
-            <ul id="nav-links" class="hidden md:flex flex-wrap justify-center gap-2 md:gap-4 lg:gap-6 mt-8 font-bold uppercase text-primary">
-                <li><a href="/" class="hover:text-secondary transition-colors py-1 px-2">Home</a></li>
-                <li><a href="/about.html" class="hover:text-secondary transition-colors py-1 px-2">About Us</a></li>
-                <li><a href="/service.html" class="hover:text-secondary transition-colors py-1 px-2">Our Service</a></li>
-                <li><a href="/blog.html" class="hover:text-secondary transition-colors py-1 px-2">Health Blog</a></li>
-                <li><a href="/shop.html" class="hover:text-secondary transition-colors py-1 px-2">Shop</a></li>
-                <li><a href="/contactus.html" class="hover:text-secondary transition-colors py-1 px-2">Contact Us</a></li>
+
+            <!-- Mobile menu is absolute; desktop is static -->
+            <ul id="nav-links"
+                class="hidden md:flex flex-wrap gap-2 md:gap-4 lg:gap-6 font-bold uppercase text-primary
+                    md:static md:h-auto md:w-auto md:bg-transparent md:shadow-none
+                    absolute inset-x-0 top-full bg-white shadow-md border-t border-gray-100
+                    flex-col px-4 py-4 z-50">
+            <li><a href="/" class="hover:text-secondary py-2">Home</a></li>
+            <li><a href="/about.html" class="hover:text-secondary py-2">About Us</a></li>
+            <li><a href="/service.html" class="hover:text-secondary py-2">Our Service</a></li>
+            <li><a href="/blog.html" class="hover:text-secondary py-2">Health Blog</a></li>
+            <li><a href="/shop.html" class="hover:text-secondary py-2">Shop</a></li>
+            <li><a href="/contactus.html" class="hover:text-secondary py-2">Contact Us</a></li>
             </ul>
         </div>
     </nav>
@@ -274,21 +281,51 @@
     
 
 <script>
-    // Mobile menu toggle
-    document.getElementById('mobile-menu-button').addEventListener('click', function() {
-      const navLinks = document.getElementById('nav-links');
-      navLinks.classList.toggle('hidden');
-      navLinks.classList.toggle('flex');
-      navLinks.classList.toggle('flex-col');
-      navLinks.classList.toggle('absolute');
-      navLinks.classList.toggle('bg-white');
-      navLinks.classList.toggle('w-full');
-      navLinks.classList.toggle('left-0');
-      navLinks.classList.toggle('top-full');
-      navLinks.classList.toggle('py-4');
-      navLinks.classList.toggle('shadow-md');
+    (function () {
+    const btn  = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('nav-links');
+    if (!btn || !menu) return;
+
+    const links = menu.querySelectorAll('a');
+
+    function openMenu() {
+        menu.classList.remove('hidden');
+        menu.classList.add('flex', 'flex-col'); // mobile layout
+        btn.setAttribute('aria-expanded', 'true');
+    }
+    function closeMenu() {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+    }
+
+    btn.addEventListener('click', () => {
+        menu.classList.contains('hidden') ? openMenu() : closeMenu();
     });
-  </script>
+
+    // Close after tapping a link (mobile)
+    links.forEach(a => a.addEventListener('click', () => {
+        if (window.innerWidth < 768) closeMenu();
+    }));
+
+    // Close on Esc
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+    });
+
+    // Keep state sane on resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+        // desktop: show as normal (no mobile classes needed)
+        menu.classList.remove('hidden', 'flex', 'flex-col');
+        btn.setAttribute('aria-expanded', 'false');
+        } else {
+        // mobile default: hidden
+        menu.classList.add('hidden');
+        }
+    });
+    })();
+</script>
+
 
 
 </body>
