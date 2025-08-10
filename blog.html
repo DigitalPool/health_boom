@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Health Blog — HealthBoom Pharmaceuticals</title>
+  <link rel="icon" href="/img/favicon.png">
+  <!-- Your built Tailwind file -->
+  <link href="../styles/output.css" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+
+<body class="font-sans antialiased text-gray-800">
+  <!-- Topbar -->
+  <header class="bg-primary py-2 px-4 md:px-8 lg:px-16 xl:px-32">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+      <p class="font-semibold text-white text-xs md:text-sm text-center md:text-left">
+        5, Moshood Bakare Street Gbagada, Lagos, Nigeria
+      </p>
+      <p class="font-semibold text-white text-xs md:text-sm text-center md:text-right">
+        Need Help? Call: +2348038612666
+      </p>
+    </div>
+  </header>
+
+  <!-- Nav -->
+  <nav class="bg-white shadow-md py-3 px-4 md:px-8 lg:px-16 xl:px-32">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" rel="home" class="shrink-0">
+        <img src="/img/site-logo.png" alt="HealthBoom Website" class="h-14 w-auto">
+      </a>
+
+      <button id="mobile-menu-button" class="md:hidden text-primary text-3xl" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul id="nav-links" class="hidden md:flex flex-wrap justify-center gap-2 md:gap-4 lg:gap-6 font-bold uppercase text-primary">
+        <li><a href="/" class="hover:text-secondary transition-colors py-1 px-2">Home</a></li>
+        <li><a href="/about.html" class="hover:text-secondary transition-colors py-1 px-2">About Us</a></li>
+        <li><a href="/service.html" class="hover:text-secondary transition-colors py-1 px-2">Our Service</a></li>
+        <li><a href="/blog.html" class="text-secondary py-1 px-2">Health Blog</a></li>
+        <li><a href="/shop.html" class="hover:text-secondary transition-colors py-1 px-2">Shop</a></li>
+        <li><a href="/contactus.html" class="hover:text-secondary transition-colors py-1 px-2">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero / Breadcrumb -->
+  <section class="bg-amber-100 bg-[url(/img/site-hero-white.png)] md:bg-[url(/img/inner-banner-1.png)] bg-cover bg-center bg-no-repeat">
+    <div class="max-w-7xl mx-auto px-4 md:px-16 lg:px-0 py-24 md:py-32 flex flex-col items-center text-center">
+      <h1 class="font-bold text-2xl md:text-4xl lg:text-5xl text-primary">Health Blog</h1>
+      <p class="mt-3 text-sm md:text-base">
+        <a href="/" class="text-accent font-semibold">Home /</a>
+        <span class="font-semibold text-primary"> Health Blog</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="py-12">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 xl:px-0 grid grid-cols-1 md:[grid-template-columns:2fr_1fr] gap-10">
+      <!-- Left: Blog list -->
+      <section aria-label="Articles" class="space-y-6">
+        <!-- Toolbar -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <!-- Search -->
+          <div class="relative w-full md:max-w-md">
+            <label for="blog-search" class="sr-only">Search articles</label>
+            <input id="blog-search" type="search" placeholder="Search articles…"
+                   class="w-full h-12 rounded-md border border-gray-300 pl-11 pr-4 focus:outline-none focus:ring-2 focus:ring-accent/70"
+                   />
+            <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+          </div>
+
+          <!-- Category chips -->
+          <div class="flex flex-wrap items-center gap-2" id="category-chips">
+            <button data-cat="all" class="chip active bg-accent text-white px-3 py-2 rounded-md text-sm">All</button>
+            <button data-cat="wellness" class="chip bg-gray-100 text-primary px-3 py-2 rounded-md text-sm hover:bg-gray-200">Wellness</button>
+            <button data-cat="pharmacy" class="chip bg-gray-100 text-primary px-3 py-2 rounded-md text-sm hover:bg-gray-200">Pharmacy</button>
+            <button data-cat="nutrition" class="chip bg-gray-100 text-primary px-3 py-2 rounded-md text-sm hover:bg-gray-200">Nutrition</button>
+            <button data-cat="alerts" class="chip bg-gray-100 text-primary px-3 py-2 rounded-md text-sm hover:bg-gray-200">Health Alerts</button>
+          </div>
+        </div>
+
+        <!-- Grid of posts -->
+        <div id="blog-grid" class="grid gap-6 sm:grid-cols-2">
+          <!-- Card -->
+          <article class="group border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition"
+                   data-cat="wellness" data-title="7 daily habits for a stronger immune system">
+            <a href="/blog/post.html" class="block">
+              <div class="aspect-[16/9] bg-center bg-cover" style="background-image:url('/img/blog/immune.webp');"></div>
+            </a>
+            <div class="p-5 space-y-3">
+              <div class="flex items-center gap-2 text-xs text-gray-500">
+                <span class="inline-flex items-center gap-1"><i class="fa-regular fa-calendar"></i> Aug 5, 2025</span>
+                <span class="inline-flex items-center gap-1"><i class="fa-regular fa-user"></i> HealthBoom Team</span>
+              </div>
+              <a href="/blog/post.html" class="block">
+                <h2 class="text-lg font-bold text-primary group-hover:text-accent">7 Daily Habits for a Stronger Immune System</h2>
+              </a>
+              <p class="text-sm text-gray-600">
+                Simple, evidence-backed routines to keep your defenses sharp — sleep, hydration, movement, and more…
+              </p>
+              <div class="flex items-center justify-between pt-1">
+                <span class="text-xs bg-emerald-50 text-emerald-700 px-2 py-1 rounded">Wellness</span>
+                <a href="/blog/post.html" class="text-accent text-sm font-semibold hover:underline">Read more</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="group border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition"
+                   data-cat="pharmacy" data-title="how to use antibiotics safely">
+            <a href="/blog/post.html" class="block">
+              <div class="aspect-[16/9] bg-center bg-cover" style="background-image:url('/img/blog/antibiotics.jpg');"></div>
+            </a>
+            <div class="p-5 space-y-3">
+              <div class="flex items-center gap-2 text-xs text-gray-500">
+                <span class="inline-flex items-center gap-1"><i class="fa-regular fa-calendar"></i> Jul 28, 2025</span>
+                <span class="inline-flex items-center gap-1"><i class="fa-regular fa-user"></i> Pharm. A. B. Kutelu</span>
+              </div>
+              <a href="/blog/post.html" class="block">
+                <h2 class="text-lg font-bold text-primary group-hover:text-accent">How to Use Antibiotics Safely</h2>
+              </a>
+              <p class="text-sm text-gray-600">
+                Misuse drives resistance. Here’s when antibiotics help — and when they don’t — plus common side-effects.
+              </p>
+              <div class="flex items-center justify-between pt-1">
+                <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">Pharmacy</span>
+                <a href="/blog/post.html" class="text-accent text-sm font-semibold hover:underline">Read more</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="group border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition"
+                   data-cat="nutrition" data-title="5 heart friendly foods from your local market">
+            <a href="/blog/post.html" class="block">
+              <div class="aspect-[16/9] bg-center bg-cover" style="background-image:url('/img/blog/heart-foods.jpg');"></div>
+            </a>
+            <div class="p-5 space-y-3">
+              <div class="flex items-center gap-2 text-xs text-gray-500">
+                <span class="inline-flex items-center gap-1"><i class="fa-regular fa-calendar"></i> Jul 15, 2025</span>
+                <span class="inline-flex items-center gap-1"><i class="fa-regular fa-user"></i> HealthBoom Team</span>
+              </div>
+              <a href="/blog/post.html" class="block">
+                <h2 class="text-lg font-bold text-primary group-hover:text-accent">5 Heart-Friendly Foods from Your Local Market</h2>
+              </a>
+              <p class="text-sm text-gray-600">
+                Affordable staples packed with fiber, healthy fats, and micronutrients to support your cardiovascular health.
+              </p>
+              <div class="flex items-center justify-between pt-1">
+                <span class="text-xs bg-amber-50 text-amber-700 px-2 py-1 rounded">Nutrition</span>
+                <a href="/blog/post.html" class="text-accent text-sm font-semibold hover:underline">Read more</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="group border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition"
+                   data-cat="alerts" data-title="harmattan health alert staying safe during dusty weather">
+            <a href="/blog/post.html" class="block">
+              <div class="aspect-[16/9] bg-center bg-cover" style="background-image:url('/img/blog/harmattan.jpeg');"></div>
+            </a>
+            <div class="p-5 space-y-3">
+              <div class="flex items-center gap-2 text-xs text-gray-500">
+                <span class="inline-flex items-center gap-1"><i class="fa-regular fa-calendar"></i> Jun 30, 2025</span>
+                <span class="inline-flex items-center gap-1"><i class="fa-regular fa-user"></i> HealthBoom Team</span>
+              </div>
+              <a href="/blog/post.html" class="block">
+                <h2 class="text-lg font-bold text-primary group-hover:text-accent">Harmattan Health Alert: Staying Safe During Dusty Weather</h2>
+              </a>
+              <p class="text-sm text-gray-600">
+                From skin dryness to respiratory flare-ups — practical steps to protect your family in harmattan season.
+              </p>
+              <div class="flex items-center justify-between pt-1">
+                <span class="text-xs bg-rose-50 text-rose-700 px-2 py-1 rounded">Health Alerts</span>
+                <a href="/blog/post.html" class="text-accent text-sm font-semibold hover:underline">Read more</a>
+              </div>
+            </div>
+          </article>
+          
+          <!-- more -->
+
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Pagination" class="flex items-center justify-center gap-2 pt-4">
+          <button class="pg prev px-3 py-2 border rounded text-primary hover:bg-gray-50 disabled:opacity-40" disabled>
+            <i class="fa-solid fa-angle-left"></i>
+          </button>
+          <button class="pg page current px-3 py-2 border rounded bg-primary text-white">1</button>
+          <button class="pg page px-3 py-2 border rounded text-primary hover:bg-gray-50">2</button>
+          <button class="pg page px-3 py-2 border rounded text-primary hover:bg-gray-50">3</button>
+          <button class="pg next px-3 py-2 border rounded text-primary hover:bg-gray-50">
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
+        </nav>
+      </section>
+
+      <!-- Right: Sidebar -->
+      <aside class="space-y-8">
+        <!-- About widget -->
+        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <h3 class="text-primary text-lg font-bold mb-3">About HealthBoom</h3>
+          <p class="text-sm text-gray-600">
+            We share practical, pharmacist-reviewed tips on medicines, wellness, and preventive care — tailored to our community.
+          </p>
+        </div>
+
+        <!-- Categories -->
+        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <h3 class="text-primary text-lg font-bold mb-4">Categories</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center justify-between">
+              <button class="text-primary hover:text-accent category-link" data-cat="wellness">Wellness</button>
+              <span class="text-gray-500">12</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <button class="text-primary hover:text-accent category-link" data-cat="pharmacy">Pharmacy</button>
+              <span class="text-gray-500">9</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <button class="text-primary hover:text-accent category-link" data-cat="nutrition">Nutrition</button>
+              <span class="text-gray-500">7</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <button class="text-primary hover:text-accent category-link" data-cat="alerts">Health Alerts</button>
+              <span class="text-gray-500">5</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Recent posts -->
+        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <h3 class="text-primary text-lg font-bold mb-4">Recent Posts</h3>
+          <ul class="space-y-4">
+            <li class="flex gap-3">
+              <img src="/img/blog/antibiotics.jpg" alt="" class="h-14 w-20 object-cover rounded">
+              <div>
+                <a href="/blog/post.html" class="text-sm font-semibold text-primary hover:text-accent">
+                  How to Use Antibiotics Safely
+                </a>
+                <p class="text-xs text-gray-500 mt-1">Jul 28, 2025</p>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <img src="/img/blog/immune.webp" alt="" class="h-14 w-20 object-cover rounded">
+              <div>
+                <a href="/blog/post.html" class="text-sm font-semibold text-primary hover:text-accent">
+                  7 Daily Immune Habits
+                </a>
+                <p class="text-xs text-gray-500 mt-1">Aug 5, 2025</p>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <img src="/img/blog/harmattan.jpeg" alt="" class="h-14 w-20 object-cover rounded">
+              <div>
+                <a href="/blog/post.html" class="text-sm font-semibold text-primary hover:text-accent">
+                  Harmattan Health Alert
+                </a>
+                <p class="text-xs text-gray-500 mt-1">Jun 30, 2025</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="bg-accent text-white rounded-lg p-6 shadow-sm relative overflow-hidden">
+          <h3 class="text-lg font-bold mb-2">Subscribe</h3>
+          <p class="text-sm text-white/90 mb-4">Get the latest health tips and pharmacy updates.</p>
+          <form action="#" class="space-y-3">
+            <label for="news-email" class="sr-only">Email</label>
+            <input id="news-email" type="email" placeholder="Enter your email"
+                   class="w-full h-11 rounded-md border-0 px-4 text-gray-800 focus:outline-none"/>
+            <button type="submit" class="w-full h-11 bg-white text-primary font-semibold rounded-md hover:bg-gray-100">
+              Subscribe
+            </button>
+          </form>
+          <img src="/img/call-logo.png" alt="" class="absolute -right-6 bottom-2 opacity-20 w-28 pointer-events-none select-none">
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- CTA band -->
+  <section class="w-full bg-accent">
+    <div class="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto place-items-center gap-4 px-4 md:px-8 lg:px-16 xl:px-0 py-10">
+      <div class="text-center md:text-left">
+        <p class="text-white font-medium text-base italic">24 hours Available</p>
+        <h2 class="text-white font-semibold text-2xl md:text-4xl leading-snug">
+          Any Emergency? Call us Any Time
+        </h2>
+      </div>
+      <a href="tel:+2348038612666"
+         class="bg-orange-400 md:justify-self-end h-12 w-56 md:w-64 rounded-md grid place-items-center text-white text-lg font-bold">
+        +2348038612666
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer top -->
+  <section class="bg-indigo-950 p-4">
+    <div class="relative z-0 bg-indigo-950 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto h-auto px-4 md:px-8 lg:px-0">
+      <div class="text-white">
+        <img src="/img/site-logo-white.png" alt="HealthBoom Logo" class="h-20 mb-4"/>
+        <div class="flex items-start gap-3 mb-3">
+          <i class="fas fa-map-marker-alt text-red-500 mt-1"></i>
+          <p>5, Moshood Bakare Street,<br/>Gbagada, Lagos, Nigeria.</p>
+        </div>
+        <div class="flex items-center gap-3 mb-3">
+          <i class="fas fa-phone-alt text-red-500"></i>
+          <p>+2348038612666<br/>+2348078552299</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <i class="fas fa-envelope text-red-500"></i>
+          <p>info@healthboompharm.com</p>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-2xl">Explore</h4>
+        <ul class="mt-5 space-y-3">
+          <li><a href="/" class="text-white/90 hover:text-white">Home</a></li>
+          <li><a href="/about.html" class="text-white/90 hover:text-white">About us</a></li>
+          <li><a href="/service.html" class="text-white/90 hover:text-white">Services</a></li>
+          <li><a href="/shop.html" class="text-white/90 hover:text-white">Store</a></li>
+          <li><a href="/contactus.html" class="text-white/90 hover:text-white">Contact us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-2xl">Links</h4>
+        <ul class="mt-5 space-y-3">
+          <li><a href="/appointment.html" class="text-white/90 hover:text-white">Make An Appointment</a></li>
+          <li><a href="mailto:info@healthboompharm.com" class="text-white/90 hover:text-white">Mail</a></li>
+          <li><a href="/faq.html" class="text-white/90 hover:text-white">FAQ</a></li>
+          <li><a href="/privacy.html" class="text-white/90 hover:text-white">Privacy Policy</a></li>
+          <li><a href="/terms.html" class="text-white/90 hover:text-white">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold text-2xl">Subscribe</h4>
+        <p class="mt-5 text-white/80 text-sm">Subscribe to get the latest news from us.</p>
+        <form action="#" class="relative w-full max-w-xs bg-white mt-4 rounded-md">
+          <label for="footer-email" class="sr-only">Email</label>
+          <input type="email" id="footer-email" name="email" placeholder="Enter your email"
+                 class="w-full h-10 pl-4 pr-10 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+          <i class="fa-solid fa-envelope absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+        </form>
+        <div class="flex space-x-4 text-white text-xl mt-5">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f hover:text-blue-500"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter hover:text-sky-400"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram hover:text-pink-500"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in hover:text-blue-400"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer bottom -->
+  <footer class="bg-red-600 w-full text-blue-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 xl:px-0 h-12 flex flex-col md:flex-row items-center justify-center gap-2 text-[11px] md:text-[14px]">
+      <p class="text-center">© 2021–2025 HealthBoom Pharmaceuticals. All Rights Reserved.</p>
+      <p>Designed by <span class="ml-1 text-white font-semibold">DigitalPool</span></p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    (function(){
+      const btn = document.getElementById('mobile-menu-button');
+      const nav = document.getElementById('nav-links');
+      if(btn && nav){
+        btn.addEventListener('click', () => {
+          nav.classList.toggle('hidden');
+          nav.classList.toggle('flex');
+          nav.classList.toggle('flex-col');
+          nav.classList.toggle('absolute');
+          nav.classList.toggle('bg-white');
+          nav.classList.toggle('w-full');
+          nav.classList.toggle('left-0');
+          nav.classList.toggle('top-full');
+          nav.classList.toggle('py-4');
+          nav.classList.toggle('shadow-md');
+        });
+      }
+    })();
+
+    // Simple blog filtering (search + category)
+    (function(){
+      const grid = document.getElementById('blog-grid');
+      if(!grid) return;
+
+      const cards = Array.from(grid.querySelectorAll('article'));
+      const chips = Array.from(document.querySelectorAll('#category-chips .chip, .category-link'));
+      const search = document.getElementById('blog-search');
+
+      let currentCat = 'all';
+      let query = '';
+
+      function applyFilter(){
+        const q = query.trim().toLowerCase();
+        cards.forEach(card => {
+          const cat = card.getAttribute('data-cat');
+          const title = (card.getAttribute('data-title') || '').toLowerCase();
+          const inCat = currentCat === 'all' || cat === currentCat;
+          const inSearch = !q || title.includes(q);
+          card.style.display = (inCat && inSearch) ? '' : 'none';
+        });
+      }
+
+      chips.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const cat = btn.getAttribute('data-cat') || 'all';
+          currentCat = cat;
+          // visual active state for top chips
+          document.querySelectorAll('#category-chips .chip').forEach(c => {
+            c.classList.remove('bg-accent','text-white','active');
+            c.classList.add('bg-gray-100','text-primary');
+          });
+          const topChip = document.querySelector(`#category-chips .chip[data-cat="${cat}"]`);
+          if(topChip){
+            topChip.classList.add('bg-accent','text-white','active');
+            topChip.classList.remove('bg-gray-100','text-primary');
+          }
+          applyFilter();
+        });
+      });
+
+      if(search){
+        search.addEventListener('input', (e) => {
+          query = e.target.value || '';
+          applyFilter();
+        });
+      }
+    })();
+
+    // (Optional) pagination demo – just visual, no fetch
+    (function(){
+      const pages = document.querySelectorAll('.pg.page');
+      const prev = document.querySelector('.pg.prev');
+      const next = document.querySelector('.pg.next');
+      let idx = 0;
+
+      function setPage(i){
+        pages.forEach((p, k) => {
+          p.classList.toggle('bg-primary', k===i);
+          p.classList.toggle('text-white', k===i);
+          p.classList.toggle('bg-white', k!==i);
+        });
+        if(prev) prev.disabled = i===0;
+        if(next) next.disabled = i===pages.length-1;
+      }
+
+      pages.forEach((p, k) => p.addEventListener('click', () => { idx = k; setPage(idx); }));
+      if(prev) prev.addEventListener('click', () => { if(idx>0){ idx--; setPage(idx);} });
+      if(next) next.addEventListener('click', () => { if(idx<pages.length-1){ idx++; setPage(idx);} });
+      setPage(idx);
+    })();
+  </script>
+</body>
+</html>
