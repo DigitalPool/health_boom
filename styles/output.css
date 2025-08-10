@@ -362,6 +362,9 @@
   .m-5 {
     margin: calc(var(--spacing) * 5);
   }
+  .m-12 {
+    margin: calc(var(--spacing) * 12);
+  }
   .m-20 {
     margin: calc(var(--spacing) * 20);
   }
@@ -424,6 +427,9 @@
   }
   .mb-5 {
     margin-bottom: calc(var(--spacing) * 5);
+  }
+  .mb-12 {
+    margin-bottom: calc(var(--spacing) * 12);
   }
   .mb-20 {
     margin-bottom: calc(var(--spacing) * 20);
@@ -1074,6 +1080,9 @@
   }
   .pr-24 {
     padding-right: calc(var(--spacing) * 24);
+  }
+  .pb-12 {
+    padding-bottom: calc(var(--spacing) * 12);
   }
   .pl-2 {
     padding-left: calc(var(--spacing) * 2);
