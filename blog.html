@@ -78,11 +78,11 @@
 
           <!-- Category chips -->
           <div class="flex flex-wrap items-center gap-2" id="category-chips">
-            <button data-cat="all" class="chip active bg-accent text-white px-3 py-2 rounded-md text-sm">All</button>
-            <button data-cat="wellness" class="chip bg-gray-100 text-primary px-3 py-2 rounded-md text-sm hover:bg-gray-200">Wellness</button>
-            <button data-cat="pharmacy" class="chip bg-gray-100 text-primary px-3 py-2 rounded-md text-sm hover:bg-gray-200">Pharmacy</button>
-            <button data-cat="nutrition" class="chip bg-gray-100 text-primary px-3 py-2 rounded-md text-sm hover:bg-gray-200">Nutrition</button>
-            <button data-cat="alerts" class="chip bg-gray-100 text-primary px-3 py-2 rounded-md text-sm hover:bg-gray-200">Health Alerts</button>
+            <button data-cat="all" class="chip active bg-accent text-white px-3 py-2 rounded-md text-sm  hover:bg-blue-600 hover:scale-95 duration-300 ease-out cursor-pointer">All</button>
+            <button data-cat="wellness" class="chip bg-gray-100 text-primary px-3 py-2 rounded-md text-sm hover:bg-gray-200 hover:scale-95 duration-300 ease-out cursor-pointer">Wellness</button>
+            <button data-cat="pharmacy" class="chip bg-gray-100 text-primary px-3 py-2 rounded-md text-sm hover:bg-gray-200 hover:scale-95 duration-300 ease-out cursor-pointer">Pharmacy</button>
+            <button data-cat="nutrition" class="chip bg-gray-100 text-primary px-3 py-2 rounded-md text-sm hover:bg-gray-200 hover:scale-95 duration-300 ease-out cursor-pointer">Nutrition</button>
+            <button data-cat="alerts" class="chip bg-gray-100 text-primary px-3 py-2 rounded-md text-sm hover:bg-gray-200 hover:scale-95 duration-300 ease-out cursor-pointer">Health Alerts</button>
           </div>
         </div>
 
@@ -274,7 +274,8 @@
             <label for="news-email" class="sr-only">Email</label>
             <input id="news-email" type="email" placeholder="Enter your email"
                    class="w-full h-11 rounded-md border-0 bg-red-700 px-4 text-white focus:outline-none"/>
-            <button type="submit" class="w-full h-11 bg-white text-primary font-semibold rounded-md hover:bg-gray-100">
+            <button type="submit" class="w-full h-11 bg-white text-primary font-semibold rounded-md hover:bg-gray-100
+                    hover:scale-95 duration-300 ease-out cursor-pointer ">
               Subscribe
             </button>
           </form>
@@ -304,7 +305,7 @@
   <section class="bg-indigo-950 p-4">
     <div class="relative z-0 bg-indigo-950 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto h-auto px-4 md:px-8 lg:px-0">
       <div class="text-white">
-        <img src="/img/site-logo-white.png" alt="HealthBoom Logo" class="h-20 mb-4"/>
+        <a href="/"><img src="/img/site-logo-white.png" alt="HealthBoom Logo" class="h-20 mb-4" /></a>
         <div class="flex items-start gap-3 mb-3">
           <i class="fas fa-map-marker-alt text-red-500 mt-1"></i>
           <p>5, Moshood Bakare Street,<br/>Gbagada, Lagos, Nigeria.</p>
